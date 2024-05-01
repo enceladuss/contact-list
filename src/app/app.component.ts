@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { ContactsService } from './modules/contacts/services/contacts.service';
 
 @Component({
   selector: 'app-root',
@@ -9,5 +10,9 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'contacts';
+
+  constructor(private contactsService: ContactsService) {
+    this.contactsService.createDummyContacts();
+  }
+
 }

@@ -12,7 +12,7 @@ export const ContactsRoutes: Routes = [
         loadChildren: () => import('./contacts-list/contacts-list.routes').then(x => x.ContactsListRoutes)
       },
       {
-        path: 'profile/:id',
+        path: 'profile/:slug',
         loadChildren: () => import('./profile/profile.routes').then(x => x.ProfileRoutes)
       },
       {

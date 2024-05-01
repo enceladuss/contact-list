@@ -7,12 +7,19 @@
       <section class="contacts-list-head">
         <app-search-input (searchQuery)="onSearch($event)"></app-search-input>
 
-        <button mat-raised-button color="primary" class='custom-button'>Add New Contact</button>
+        <button mat-raised-button color="primary" class='custom-button' (click)="addContact()">Add New Contact</button>
       </section>
 
       <section class="contacts-list">
 
-        <app-contact-card></app-contact-card>
+        @for (contact of (contacts$ | async); track contact) {
+          <app-contact-card [contact]="contact"></app-contact-card>
+        }
+
+        @if (!(contacts$ | async)?.length) {
+          <p class="error">No Contacts Found.</p>
+        }
+
 
       </section>
     </div>

@@ -3,41 +3,63 @@
   <div class='dialog-content'>
 
     <form [formGroup]="contactForm" class="dialog-form">
-      <fieldset class='fieldset search-wrap'>
+      <fieldset class='fieldset'>
         <mat-form-field appearance='outline' class='custom-text-field'>
           <mat-label>Full Name</mat-label>
           <input matInput type='text' formControlName="fullName">
         </mat-form-field>
       </fieldset>
 
-      <fieldset class='fieldset search-wrap'>
+      <fieldset class='fieldset'>
         <mat-form-field appearance='outline' class='custom-text-field'>
           <mat-label>Phone Number</mat-label>
-          <input matInput type='text' formControlName="phoneNumber">
+          <input
+            matInput
+            type='text'
+            [specialCharacters]="[ '-', '(', ')', ' ' ]"
+            mask="(000) 00-000-0000"
+            [validation]="false"
+            [dropSpecialCharacters]="false"
+            formControlName="phoneNumber">
         </mat-form-field>
       </fieldset>
 
-      <fieldset class='fieldset search-wrap'>
+      <fieldset class='fieldset'>
         <mat-form-field appearance='outline' class='custom-text-field'>
           <mat-label>Email Address</mat-label>
           <input matInput type='text' formControlName="emailAddress">
         </mat-form-field>
       </fieldset>
 
-      <fieldset class='fieldset search-wrap'>
+      <fieldset class='fieldset'>
         <mat-form-field appearance='outline'>
           <mat-label>Birth Date</mat-label>
-          <input readonly matInput formControlName='birthDate' [matDatepicker]="picker">
+          <input readonly [max]="todayMaxDate" matInput formControlName='birthDate' placeholder="DD.MM.YYYY" [matDatepicker]="picker">
           <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </fieldset>
+
+      <fieldset class='fieldset'>
+        <mat-form-field appearance='outline' class='custom-text-field'>
+          <mat-label>Location</mat-label>
+          <input matInput type='text' formControlName="location">
         </mat-form-field>
       </fieldset>
     </form>
 
     <div class='action-buttons'>
-      <button mat-raised-button (click)='submitClick()'>
-        Confirm
+      <button *ngIf="data.contactData" mat-button color="warn" class="custom-button" (click)='deleteClick()'>
+        Delete Contact
       </button>
+      <div class="right-wrap">
+        <button mat-button color="primary" class="custom-button" (click)='cancelClick()'>
+          Cancel
+        </button>
+        <button mat-raised-button color="primary" class="custom-button" [disabled]="!contactForm.valid" (click)='submitClick()'>
+          Save
+        </button>
+      </div>
     </div>
   </div>
 </div>

@@ -1,13 +1,13 @@
-<a routerLink="/contacts/profile/123" class="contact-card">
+<a [routerLink]="['/contacts/profile/', contact.id]" class="contact-card">
   <div class="info-column">
     <div class="image avatar">
       <img src="assets/images/user-avatar.png">
     </div>
-    <span class="column-text ellipsis-text">Yuriy Nedilsky</span>
+    <span class="column-text ellipsis-text" [innerHTML]="contact.fullName"></span>
   </div>
 
   <div class="info-column">
-    <span class="column-text ellipsis-text">+380123123123123</span>
+    <span class="column-text ellipsis-text" [innerHTML]="contact.emailAddress"></span>
   </div>
 
   <div class="info-column centered arrow-column">

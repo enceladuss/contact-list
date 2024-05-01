@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { ContactInterface } from '../../../interfaces/contact.interface';
 
 @Component({
   selector: 'app-contact-card',
@@ -11,5 +12,7 @@ import { RouterLink } from '@angular/router';
   styleUrl: './contact-card.component.scss'
 })
 export class ContactCardComponent {
+
+  @Input() contact!: ContactInterface;
 
 }
