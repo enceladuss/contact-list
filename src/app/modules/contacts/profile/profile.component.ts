@@ -75,7 +75,7 @@ export class ProfileComponent implements OnInit {
           this.contactsService.editContact(data.contactData);
           this.contact = data.contactData;
         } else if (data?.result === DialogActionsEnum.Delete) {
-          this.contactsService.deleteContact(this.contact!.id);
+          this.contactsService.deleteContact(data.contactData.id);
           this.router.navigate(['/']);
         }
       });

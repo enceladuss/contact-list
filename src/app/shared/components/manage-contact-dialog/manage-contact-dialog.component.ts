@@ -71,27 +71,26 @@ export class ManageContactDialogComponent implements OnInit {
     }
   }
   public submitClick(): void {
-    let result: ManageContactDialogResultInterface = {
-      result: DialogActionsEnum.Confirm,
-      contactData: this.contactForm.value
-    }
+    const result = this.generateDialogResult(DialogActionsEnum.Confirm);
     this.dialogRef.close(result);
   }
 
   public cancelClick(): void {
-    let result: ManageContactDialogResultInterface = {
-      result: DialogActionsEnum.Cancel,
-      contactData: this.contactForm.value
-    }
+    const result = this.generateDialogResult(DialogActionsEnum.Cancel);
     this.dialogRef.close(result);
   }
 
   public deleteClick(): void {
-    let result: ManageContactDialogResultInterface = {
-      result: DialogActionsEnum.Delete,
-      contactData: this.contactForm.value
-    }
+    const result = this.generateDialogResult(DialogActionsEnum.Delete);
     this.dialogRef.close(result);
+  }
+
+  private generateDialogResult(action: DialogActionsEnum): ManageContactDialogResultInterface {
+    const result: ManageContactDialogResultInterface = {
+      result: action,
+      contactData: { ...this.contactForm.value, id: this.data.contactData?.id }
+    };
+    return result;
   }
 
   public get todayMaxDate(): Date {
