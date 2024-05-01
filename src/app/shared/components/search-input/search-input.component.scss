@@ -1,0 +1,14 @@
+@import "variables";
+@import "form-elements";
+
+:host {
+  display: flex;
+  width: 100%;
+}
+
+.search-wrap {
+  width: 100%;
+  border-radius: 5px;
+  background-color: $white;
+  display: flex;
+}

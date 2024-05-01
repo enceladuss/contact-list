@@ -1,1 +1,19 @@
-<p>contacts-list works!</p>
+<main>
+
+  <app-header></app-header>
+
+  <section class="page-section">
+    <div class="container">
+      <div class="contacts-list-head">
+        <app-search-input (searchQuery)="onSearch($event)"></app-search-input>
+
+        <button mat-raised-button color="primary" class='custom-button'>Add New Contact</button>
+      </div>
+
+      <div class="contacts-list">
+
+      </div>
+    </div>
+  </section>
+
+</main>

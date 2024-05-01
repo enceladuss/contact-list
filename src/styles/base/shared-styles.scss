@@ -1,0 +1,24 @@
+@import "variables";
+
+main {
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background-color: $pearl-gray;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-section {
+  width: 100%;
+  margin-top: 64px;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 1300px;
+  padding: 0 32px;
+  display: flex;
+}
