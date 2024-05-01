@@ -24,3 +24,37 @@ main {
   flex-direction: column;
   align-items: flex-start;
 }
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  border-radius: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 100%;
+  }
+}
+
+.ellipsis-text {
+  display: block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.centered {
+  justify-content: center;
+}
+
+::ng-deep  {
+  .cdk-overlay-pane {
+    width: 100%;
+    max-width: 600px;
+  }
+}

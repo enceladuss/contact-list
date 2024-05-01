@@ -12,6 +12,10 @@ export const ContactsRoutes: Routes = [
         loadChildren: () => import('./contacts-list/contacts-list.routes').then(x => x.ContactsListRoutes)
       },
       {
+        path: 'profile/:id',
+        loadChildren: () => import('./profile/profile.routes').then(x => x.ProfileRoutes)
+      },
+      {
         path: '',
         redirectTo: 'list',
         pathMatch: 'full'

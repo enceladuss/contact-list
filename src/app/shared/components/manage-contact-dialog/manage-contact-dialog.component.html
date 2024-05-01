@@ -1,0 +1,43 @@
+<div class='dialog-wrap'>
+  <p class='heading' [innerHTML]='data.heading'></p>
+  <div class='dialog-content'>
+
+    <form [formGroup]="contactForm" class="dialog-form">
+      <fieldset class='fieldset search-wrap'>
+        <mat-form-field appearance='outline' class='custom-text-field'>
+          <mat-label>Full Name</mat-label>
+          <input matInput type='text' formControlName="fullName">
+        </mat-form-field>
+      </fieldset>
+
+      <fieldset class='fieldset search-wrap'>
+        <mat-form-field appearance='outline' class='custom-text-field'>
+          <mat-label>Phone Number</mat-label>
+          <input matInput type='text' formControlName="phoneNumber">
+        </mat-form-field>
+      </fieldset>
+
+      <fieldset class='fieldset search-wrap'>
+        <mat-form-field appearance='outline' class='custom-text-field'>
+          <mat-label>Email Address</mat-label>
+          <input matInput type='text' formControlName="emailAddress">
+        </mat-form-field>
+      </fieldset>
+
+      <fieldset class='fieldset search-wrap'>
+        <mat-form-field appearance='outline'>
+          <mat-label>Birth Date</mat-label>
+          <input readonly matInput formControlName='birthDate' [matDatepicker]="picker">
+          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </fieldset>
+    </form>
+
+    <div class='action-buttons'>
+      <button mat-raised-button (click)='submitClick()'>
+        Confirm
+      </button>
+    </div>
+  </div>
+</div>

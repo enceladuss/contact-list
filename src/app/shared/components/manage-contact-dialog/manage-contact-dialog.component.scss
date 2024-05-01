@@ -1,0 +1,42 @@
+@import 'variables';
+@import 'form-elements';
+
+:host {
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dialog-wrap {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.heading {
+  width: 100%;
+  padding: 10px;
+  background-color: $light-blue;
+  font-size: 18px;
+  color: $white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dialog-content {
+  width: 60%;
+  padding: 30px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dialog-form {
+  width: 100%;
+  gap: 15px;
+  display: flex;
+  flex-direction: column;
+}
