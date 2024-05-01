@@ -4,15 +4,17 @@
 
   <section class="page-section">
     <div class="container">
-      <div class="contacts-list-head">
+      <section class="contacts-list-head">
         <app-search-input (searchQuery)="onSearch($event)"></app-search-input>
 
         <button mat-raised-button color="primary" class='custom-button'>Add New Contact</button>
-      </div>
+      </section>
 
-      <div class="contacts-list">
+      <section class="contacts-list">
 
-      </div>
+        <app-contact-card></app-contact-card>
+
+      </section>
     </div>
   </section>
 
