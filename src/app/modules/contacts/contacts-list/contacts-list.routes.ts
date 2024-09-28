@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { ContactsListComponent } from './contacts-list.component';
+import { ContactsListComponent } from './pages/contacts-list/contacts-list.component';
 
 export const ContactsListRoutes: Routes = [
   {

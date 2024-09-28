@@ -1,19 +1,21 @@
 import { Component, DestroyRef, OnInit } from '@angular/core';
-import { HeaderComponent } from '../../../shared/components/header/header.component';
-import { SearchInputComponent } from '../../../shared/components/search-input/search-input.component';
+import { HeaderComponent } from '../../../../../shared/components/header/header.component';
+import { SearchInputComponent } from '../../../../../shared/components/search-input/search-input.component';
 import { MatButton } from '@angular/material/button';
-import { ContactCardComponent } from './components/contact-card/contact-card.component';
-import {MatDialog} from "@angular/material/dialog";
+import { ContactCardComponent } from '../../components/contact-card/contact-card.component';
+import { AsyncPipe } from '@angular/common';
+import { Observable } from 'rxjs';
+import { ContactInterface } from '../../../interfaces/contact.interface';
+import { ContactsService } from '../../../services/contacts.service';
+import { MatDialog } from '@angular/material/dialog';
 import {
   ManageContactDialogComponent
-} from "../../../shared/components/manage-contact-dialog/manage-contact-dialog.component";
-import { ContactsService } from '../services/contacts.service';
+} from '../../../../../shared/components/manage-contact-dialog/manage-contact-dialog.component';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { DialogActionsEnum } from '../../../shared/enums/dialogActions.enum';
-import { ManageContactDialogResultInterface } from '../../../shared/interfaces/manageContactDialogResult.interface';
-import { Observable } from 'rxjs';
-import { ContactInterface } from '../interfaces/contact.interface';
-import { AsyncPipe } from '@angular/common';
+import {
+  ManageContactDialogResultInterface
+} from '../../../../../shared/interfaces/manageContactDialogResult.interface';
+import { DialogActionsEnum } from '../../../../../shared/enums/dialogActions.enum';
 
 @Component({
   selector: 'app-contacts-list',
